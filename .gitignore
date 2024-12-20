@@ -6,7 +6,11 @@
 !.bashrc
 !.bashrc-e
 
+!.config
 !.config/alacritty
+!.config/alacritty/**
 !.config/nvim
+!.config/nvim/**
 !.config/zathura
+!.config/zathura/**
 
