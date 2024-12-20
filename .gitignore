@@ -1,0 +1,11 @@
+*
+
+!.gitignore
+!.bash_profile
+!.bashrc
+!.bashrc-e
+
+!.config/alacritty
+!.config/nvim
+!.config/zathura
+
