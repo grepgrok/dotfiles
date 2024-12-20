@@ -1,6 +1,7 @@
 *
 
 !.gitignore
+!README.md
 !.bash_profile
 !.bashrc
 !.bashrc-e
