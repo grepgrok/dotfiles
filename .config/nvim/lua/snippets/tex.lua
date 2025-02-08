@@ -1,6 +1,7 @@
 local ls = require("luasnip")
 local f = ls.function_node
 local utils = require("luasnip-latex-snippets.util.utils")
+
 -- this is NOT the right way to do this, but it works
 local functionify = function(f, opts)
     return f(opts)
@@ -11,7 +12,7 @@ local is_math, no_backslash, pipe = utils.is_math, utils.no_backslash, utils.pip
 local decorator = {
     wordTrig = false,
     condition = pipe({ is_math, no_backslash }),
-    trigEngine = "ecma",
+    trigEngine = "pattern",
 }
 
 local parse = ls.extend_decorator.apply(ls.parser.parse_snippet, decorator) --[[@as function]]
@@ -38,7 +39,7 @@ return {}, {
         end, {})
     ),
     s(
-        { trig = "\\\\mathbb{(.*)}\\1", wordTrig = false, regTrig = true, name = "math caligraphic", priority = 10 },
+        { trig = "\\\\mathbb{(.*)}\\1", wordTrig = false, regTrig = true, name = "math bold", priority = 10 },
         f(function(_, snip)
             return string.format("\\mathcal{%s}", snip.captures[1])
         end, {})
@@ -50,8 +51,8 @@ return {}, {
         end, {})
     ),
 
-    parse({ trig = "cup", name = "set union", priority = 10 }, "\\cup"),
-    parse({ trig = "cap", name = "set intersection", priority = 10 }, "\\cap"),
-    parse({ trig = "eset", name = "emptyset", priority = 10 }, "\\emptyset"),
-    parse({ trig = "00", name = "emptyset", priority = 10 }, "\\emptyset"),
+    parse({ trig = "cup", name = "set union", priority = 10 }, "\\cup "),
+    parse({ trig = "cap", name = "set intersection", priority = 10 }, "\\cap "),
+    parse({ trig = "eset", name = "emptyset", priority = 10 }, "\\emptyset "),
+    parse({ trig = "00", name = "emptyset", priority = 10 }, "\\emptyset "),
 }
