@@ -50,7 +50,7 @@ This is 8 functional + 8 highlights
 | base01      | #3A3124 | hsl(35,  23.4%, 18.4%) | BG2              |
 | base02      | #4D3F32 | hsl(29,  21.3%, 24.9%) | BG3              |
 | base03      | #5F4E41 | hsl(26,  18.8%, 31.4%) | Comments         |
-| base04      | #B8A58C | hsl(34,  23.7%, 63.5%) | *                 |
+| base04      | #B8A58C | hsl(34,  23.7%, 63.5%) | *                |
 | base05      | #D2C3A4 | hsl(40,  33.8%, 73.3%) | FG               |
 | base06      | #EBE0BB | hsl(46,  54.5%, 82.7%) |                  |
 | base07      | #F1E9D0 | hsl(45,  54.1%, 88.0%) |                  |
@@ -69,17 +69,17 @@ This is 8 functional + 8 highlights
 | Wallpaper          | .jpg    |                             |
 | Neofetchpic        | .png    |                             |
 | Foreground         | #ebe0bb |                             |
-| CursorColor        | #b8a58C |                             |
+| CursorColor        | #b8a58c |                             |
 | Background         | #242015 |                             |
-| Background 2       | #3A3124 | More Background             |
-| Background 3       | #4D3F32 | Split lines and frame lines |
+| Background 2       | #3a3124 | More Background             |
+| Background 3       | #4d3f32 | Split lines and frame lines |
 | Contrast           | #d2c3a4 |                             |
 | Cursorline         | #d2c3a4 |                             |
 | Comment            | #5f4e41 |                             |
 | Darker             | #211d13 |                             |
 | Lighter            | #f1e9d0 |                             |
 | Color 00           | #242015 | Black                       |
-| Color 08           | #3A3124 |                             |
+| Color 08           | #3a3124 |                             |
 | Color 01           | #a82d56 | Red                         |
 | Color 09           | #96294d |                             |
 | Color 02           | #7a7653 | Green                       |
@@ -92,7 +92,7 @@ This is 8 functional + 8 highlights
 | Color 13           | #b05d61 |                             |
 | Color 06           | #508991 | Cyan/Teal                   |
 | Color 14           | #61a0a8 |                             |
-| Color 07           | #d2c3a4 | White                       |
+| Color 07           | #b8a58c | White                       |
 | Color 15           | #d2c3a4 |                             |
 
 | Light Hex | Dark Hex  | Note                 |

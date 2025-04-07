@@ -2,7 +2,11 @@
 # nix run github:nix-community/home-manager -- switch --flake .
 #
 # Hint: you need `programs.home-manager.enable = true;`
-{ pkgs, lib, ... }: {
+# Hint: run `nix eval --impure --expr '(import <nixpkgs>{}).system'` to check current system for pkgs.system
+{ pkgs, lib, ... }:
+let
+    isMac = (pkgs.system == "aarch64-darwin");
+in {
     # This is required information for home-manager to do its job
     home = {
         stateVersion = "23.11";
@@ -10,6 +14,8 @@
         homeDirectory = "/Users/ben";
         packages = with pkgs; [
             luarocks
+
+            texlive.combined.scheme-full
 
             # LazyVim 
             neovim
@@ -32,8 +38,12 @@
             ]))
             # wezterm
 
+            wget
+
             ## Tex
-            zathura
+            # lib.mkIf (!isMac) zathura
+            skimpdf
+            dbus
         ];
 
         # map `./config` dir to `~/.config` dir
@@ -43,6 +53,15 @@
 
     programs.home-manager.enable = true; # let home-manager manager itself
     programs.zsh.enable = true;
+
+    programs.git = {
+        enable = true;
+        userName = "Ben Olson";
+        userEmail = "ben.k.olson@gmail.com";
+        extraConfig = {
+            credential.helper = lib.mkIf (pkgs.system == "aarch64-darwin") "osxkeychain";
+        };
+    };
 
     ## Get LazyVim to work with Nix and home-manager
     # https://github.com/LazyVim/LazyVim/discussions/1972#discussion-5826338
