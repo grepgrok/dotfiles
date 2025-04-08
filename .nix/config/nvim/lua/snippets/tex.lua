@@ -20,7 +20,7 @@ local s = ls.extend_decorator.apply(ls.snippet, decorator) --[[@as function]]
 -- Second list: autosnippets
 return {}, {
     s(
-        { trig = "([NZQRSTK])\\1", wordTrig = false, regTrig = true, name = "math blackboard bold", priority = 10 },
+        { trig = "([NZQRSTKC])\\1", wordTrig = false, regTrig = true, name = "math blackboard bold", priority = 10 },
         f(function(_, snip)
             return string.format("\\mathbb{%s}", snip.captures[1])
         end, {})
