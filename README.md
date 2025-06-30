@@ -126,6 +126,21 @@ Swamp colors:
 | #689d6a   | #508991   | DarkCyan             |
 | #8ec07c   | #61a0a8   | Cyan                 |
 
+## On Applications
+
+I think this is what's going on with Applications: First, Nix-Darwin sets up the
+system. Among this is creating (empty) things (files or directories) in
+`/run/current-system/sw -> /nix/store/[hash]-system-path` (creates in `...system-path`
+and links `...sw -> ...sysem-path`) based on `environment.pathsToLink`. Now then,
+Home-Manager downloads the file in the nix store (with the crazy hash
+`nix/store/[hash]-home-manager-path/...`; see `home.packages`). Home-Manager then
+links the `/run/current-system/sw/...` file structure (the `...`) to
+`/nix/store/[hash]-user-environment/... <- /etc/static/profiles/per-user/$USER
+<- /etc/profiles/per-user/$USER`. Finally, things get linked appropriately in
+`/Users/$USER`. Importantly for us here, we get
+`/Users/$USER/Applications/Home\ Manager\ Apps` (which are actually directly
+linked to the original files in the nix store).
+
 ## TODO
 
 - need to clear out some More

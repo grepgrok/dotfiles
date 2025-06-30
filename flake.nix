@@ -29,9 +29,6 @@
                         useGlobalPkgs = true;
                         useUserPackages = true;
                         users.ben = ./modules/home-manager;
-                        # users.ben.imports = [
-                        #     ./modules/home-manager
-                        # ];
                     };
                 }
             ];
