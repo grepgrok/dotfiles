@@ -2,10 +2,10 @@
 
 This is my managing of dotfiles and other configurations based with Nix.
 
-To update things, use the following from this `~/.nix` directory:
+To update things, use the following from this `/etc/nix-darwin` directory:
 
 ```bash
-home-manager switch --flake .
+darwin-rebuild build --flake .#Borealis
 ```
 
 ## Colors
@@ -125,3 +125,15 @@ Swamp colors:
 | #fb4934   | #a82d56   | Red                  |
 | #689d6a   | #508991   | DarkCyan             |
 | #8ec07c   | #61a0a8   | Cyan                 |
+
+## TODO
+
+- need to clear out some More
+- make the update thing more in line with nix
+- the functions are more typically nix-able (maybe, or a bashrc is the answer)
+- move to zsh
+- make zsh pretty
+- get TeX back
+- find a way to nicely "subclass" home-manager from darwin.
+  - updating darwin stuff should update home-manager but should be able to update
+  home-manager without dealing with darwin
