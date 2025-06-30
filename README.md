@@ -176,4 +176,7 @@ linked to the original files in the nix store).
 - find a way to nicely "subclass" home-manager from darwin.
   - updating darwin stuff should update home-manager but should be able to update
   home-manager without dealing with darwin
+  - I don't think this is really possible. Switching darwin needs sudo but that
+  is exactly what I want to not have to do. I think I need to fully separate out
+  home manager a la [Reckenrode](https://github.com/reckenrode/nixos-configs/blob/main/flake.nix)
 - appropriate modules across hosts and user profiles
