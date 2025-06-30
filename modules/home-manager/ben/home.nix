@@ -54,22 +54,6 @@ in {
 
     programs.home-manager.enable = true; # let home-manager manager itself
 
-    # https://github.com/nvim-treesitter/nvim-treesitter#i-get-query-error-invalid-node-type-at-position
-    # xdg.configFile."nvim/parser".source =
-    #     let
-    #         parsers = pkgs.symlinkJoin {
-    #             name = "treesitter-parsers";
-    #             paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [
-    #                 c
-    #                 lua
-    #             ])).dependencies;
-    #         };
-    #     in
-    #     "${parsers}/parser";
-
-    # # Normal LazyVim config here, see https://github.com/LazyVim/starter/tree/main/lua
-    # xdg.configFile."nvim/lua".source = ./config/nvim/lua;
-
     imports = [
         # (import ./config/alacritty/default.nix { inherit pkgs; })
         (import ./config/git/default.nix { inherit pkgs lib; })
