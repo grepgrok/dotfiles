@@ -17,8 +17,6 @@ in {
         file.".config" = { source = ./config; recursive = true; };
     };
 
-    programs.alacritty.enable = true;
-
     home.packages = with pkgs; [
             luarocks # Lua
             wget
@@ -56,17 +54,7 @@ in {
 
     programs.home-manager.enable = true; # let home-manager manager itself
 
-    programs.zsh.enable = true;
-
-    programs.git = {
-        enable = true;
-        userName = "Ben Olson";
-        userEmail = "ben.k.olson@gmail.com";
-        extraConfig = {
-            credential.helper = lib.mkIf (pkgs.system == "aarch64-darwin") "osxkeychain";
-            init.defaultBranch = "main";
-        };
-    };
+    programs.zsh.enable = true; 
 
     ## Get LazyVim to work with Nix and home-manager
     # https://github.com/LazyVim/LazyVim/discussions/1972#discussion-5826338
@@ -190,7 +178,8 @@ in {
     xdg.configFile."nvim/lua".source = ./config/nvim/lua;
 
     imports = [
-        (import ./config/wezterm/default.nix { inherit pkgs colors; })
         # (import ./config/alacritty/default.nix { inherit pkgs; })
+        (import ./config/git/default.nix { inherit pkgs lib; })
+        (import ./config/wezterm/default.nix { inherit pkgs colors; })
     ];
 }
