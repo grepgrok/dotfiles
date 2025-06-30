@@ -6,7 +6,7 @@
 { pkgs, lib, ... }:
 let
     isMac = (pkgs.system == "aarch64-darwin");
-    colors = import ./shared/colors/swamp.nix { };
+    colors = import ./aesthetics/colors/swamp.nix { };
 in {
     # This is required information for home-manager to do its job
     home = {

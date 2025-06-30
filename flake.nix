@@ -21,14 +21,14 @@
                 config.allowUnfree = true; 
             };
             modules = [
-                ./modules/darwin
+                ./modules/hosts/Borealis/configuration.nix
 
                 home-manager.darwinModules.home-manager
                 {
                     home-manager = {
                         useGlobalPkgs = true;
                         useUserPackages = true;
-                        users.ben = ./modules/home-manager;
+                        users.ben = ./modules/home-manager/ben/home.nix;
                     };
                 }
             ];
