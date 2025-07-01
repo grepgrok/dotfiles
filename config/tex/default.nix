@@ -1,9 +1,8 @@
-{ pkgs, pkgs-chrjabs, ... }:
+{ pkgs, pkgs-texlive, ... }:
 {
-    home.packages = [
+    home.packages = with pkgs; [
         # lib.mkIf (!isMac) zathura
-        pkgs-chrjabs.texlive.combined.scheme-basic
-        pkgs.skimpdf
-        pkgs.dbus
-    ];
+        skimpdf
+        dbus
+    ] ++ [ pkgs-texlive.texlive.combined.scheme-basic ];
 }

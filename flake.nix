@@ -2,14 +2,18 @@
     description = "Borealis nix-darwin system flake";
 
     inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-        nixpkgs-chrjabs.url = "github:chrjabs/nixpkgs/texlive";
+        nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+        nixpkgs-texlive.url = "github:nixos/nixpkgs/master"; # uber unstable and untested
 
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = inputs@{ nixpkgs, nixpkgs-chrjabs, home-manager, ... }:
+    outputs = {
+        nixpkgs,
+        home-manager,
+        ...
+    } @ inputs:
     let
         system = "aarch64-darwin";
     in 
@@ -19,7 +23,7 @@
             extraSpecialArgs = {
                 inherit inputs;
 
-                pkgs-chrjabs = import nixpkgs-chrjabs {
+                pkgs-texlive = import inputs.nixpkgs-texlive {
                     inherit system;
                     config.allowUnfree = true;
                 };

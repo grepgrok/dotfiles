@@ -22,32 +22,32 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1751180975,
-        "narHash": "sha256-BKk4yDiXr4LdF80OTVqYJ53Q74rOcA/82EClXug8xsY=",
-        "owner": "NixOS",
+        "lastModified": 1751349533,
+        "narHash": "sha256-5XRh0mB06/7WYDLu9ZXsx1GhyvvNVZDtPyg34sUCLJs=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a48741b083d4f36dd79abd9f760c84da6b4dc0e5",
+        "rev": "bdfd0f2afcf764e531d0960c821ab070a6174b15",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "nixos",
         "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
-    "nixpkgs-chrjabs": {
+    "nixpkgs-texlive": {
       "locked": {
-        "lastModified": 1751364620,
-        "narHash": "sha256-0SAFta3RzInocZ8n9h7qMI6deKL3GsEzlnUBVPcyG1E=",
-        "owner": "chrjabs",
+        "lastModified": 1751410077,
+        "narHash": "sha256-hzJmlzTjIXE+n0wNSjfVtIM4PKwbVIt8NUhGb60NZiw=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b39a9d979c20a4242ee725bebdff7b773638ad21",
+        "rev": "403add6263c14f9b253fd5da4ce2226ed4541fdd",
         "type": "github"
       },
       "original": {
-        "owner": "chrjabs",
-        "ref": "texlive",
+        "owner": "nixos",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -56,7 +56,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-chrjabs": "nixpkgs-chrjabs"
+        "nixpkgs-texlive": "nixpkgs-texlive"
       }
     }
   },

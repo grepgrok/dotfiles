@@ -3,7 +3,13 @@
 #
 # Hint: you need `programs.home-manager.enable = true;`
 # Hint: run `nix eval --impure --expr '(import <nixpkgs>{}).system'` to check current system for pkgs.system
-{ inputs, pkgs, pkgs-chrjabs, lib, ... }:
+{
+    inputs,
+    pkgs,
+    pkgs-texlive,
+    lib,
+    ...
+} @ args:
 let
     colors = import ./aesthetics/colors/swamp.nix { };
 in {
@@ -33,7 +39,7 @@ in {
         # (import ./config/alacritty/default.nix { inherit pkgs; })
         (import ./config/git/default.nix { inherit pkgs lib; })
         (import ./config/nvim/default.nix { inherit pkgs lib; })
-        (import ./config/tex/default.nix { inherit pkgs pkgs-chrjabs; })
+        (import ./config/tex/default.nix { inherit pkgs pkgs-texlive; })
         (import ./config/wezterm/default.nix { inherit pkgs colors; })
         (import ./config/zsh/default.nix { inherit pkgs; })
     ];
