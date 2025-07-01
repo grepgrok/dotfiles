@@ -21,27 +21,10 @@ in {
             luarocks # Lua
             wget
             wezterm
-
-            ## LazyVim
-            # neovim
-            nerd-fonts._0xproto
             git
             lazygit
             curl
             fzf
-            ripgrep
-            fd
-            # Linter languages
-            (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: with p; [
-                c
-                nix
-                haskell
-                markdown
-                json
-                rust
-                tex
-                toml
-            ]))
 
             ## Tex
             # lib.mkIf (!isMac) zathura

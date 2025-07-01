@@ -1,5 +1,26 @@
 { pkgs, lib, ... }:
 {
+    home.packages = with pkgs; [
+        git
+        nerd-fonts._0xproto
+        lazygit
+        curl
+        fzf
+        ripgrep
+        fd
+
+        # Linter Languages
+        (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: with p; [
+            c
+            nix
+            haskell
+            markdown
+            json
+            rust
+            tex
+            toml
+        ]))
+    ];
     ## Get LazyVim to work with Nix and home-manager
     # https://github.com/LazyVim/LazyVim/discussions/1972#discussion-5826338
     programs.neovim = {
