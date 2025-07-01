@@ -24,12 +24,6 @@ in {
             lazygit
             curl
             fzf
-
-            ## Tex
-            # lib.mkIf (!isMac) zathura
-            #texlive.combined.scheme-full
-            skimpdf
-            dbus
         ];
 
     xdg.enable = true; # Tell programs to use ~/.config
