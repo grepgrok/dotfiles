@@ -167,7 +167,6 @@ linked to the original files in the nix store).
 
 ## TODO
 
-- need to clear out some More
 - make the update thing more in line with nix
 - the functions are more typically nix-able (maybe, or a bashrc is the answer)
 - move to zsh
