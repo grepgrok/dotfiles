@@ -10,27 +10,9 @@ darwin-rebuild build --flake .#Borealis
 
 ## Structure
 
-While not currently needed, the structure is set up to allow better modularity
-in the future (largely bc that's what most people seem to do and it makes sense).
-Basically everything lives under `modules`, except the flake. The flake basically
-connects machines/systems/hosts to their appropriate configurations. I'm not
-100% how this works but I'm pretty sure its based off checking the current hostname
-and using the respective configuration in `flake.nix`. For example, on my MacBook
-Borealis, it will select `darwinConfigurations."Borealis"`.
+`aesthetics` carries aesthetic stuff: wallpapers, colorschemes, etc.
 
-`hosts` manages... hosts. Devices in the network. In principle, this could be your
-stuff on a big server like with DigitalOcean Droplets, a virtual machine, or, more
-practically probably, your laptop. My MacBook is called "Borealis" so we have
-`hosts/Borealis`. Now, these manage more system-wide settings. Things like printers,
-(internet) networking, etc. If you think "this feels very operating system-y" then
-it probably belongs here.
-
-`home-manager` on the other hand manages user homes. Most prototypically,
-dotfiles/config(uration) files. These are the things that individual people might
-like to have to work with. Styling (Neo)Vim, terminals, browsers, music, git, etc.
-Generally, each profile in `home-manager` should be usable across hosts without
-having to change anything. Note that specifically this is for Home Manager
-configurations. But that's pretty broad.
+`config` is directly linked to `~/.config` and is the dotfiles.
 
 ## Colors
 
@@ -152,9 +134,9 @@ Swamp colors:
 
 ## On Applications
 
-I think this is what's going on with Applications: First, Nix-Darwin sets up the
-system. Among this is creating (empty) things (files or directories) in
-`/run/current-system/sw -> /nix/store/[hash]-system-path` (creates in `...system-path`
+I think this is what's going on with Applications: First, [Nix-Darwin](https://github.com/grepgrok/darwin)
+sets up the system. Among this is creating (empty) things (files or directories)
+in `/run/current-system/sw -> /nix/store/[hash]-system-path` (creates in `...system-path`
 and links `...sw -> ...sysem-path`) based on `environment.pathsToLink`. Now then,
 Home-Manager downloads the file in the nix store (with the crazy hash
 `nix/store/[hash]-home-manager-path/...`; see `home.packages`). Home-Manager then
