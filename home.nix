@@ -3,9 +3,8 @@
 #
 # Hint: you need `programs.home-manager.enable = true;`
 # Hint: run `nix eval --impure --expr '(import <nixpkgs>{}).system'` to check current system for pkgs.system
-{ inputs, pkgs, lib, ... }:
+{ inputs, pkgs, pkgs-chrjabs, lib, ... }:
 let
-    isMac = (pkgs.system == "aarch64-darwin");
     colors = import ./aesthetics/colors/swamp.nix { };
 in {
     # This is required information for home-manager to do its job
@@ -18,13 +17,13 @@ in {
     };
 
     home.packages = with pkgs; [
-            luarocks # Lua
-            wget
-            git
-            lazygit
-            curl
-            fzf
-        ];
+        luarocks # Lua
+        wget
+        git
+        lazygit
+        curl
+        fzf
+    ];
 
     xdg.enable = true; # Tell programs to use ~/.config
 
@@ -34,6 +33,7 @@ in {
         # (import ./config/alacritty/default.nix { inherit pkgs; })
         (import ./config/git/default.nix { inherit pkgs lib; })
         (import ./config/nvim/default.nix { inherit pkgs lib; })
+        (import ./config/tex/default.nix { inherit pkgs pkgs-chrjabs; })
         (import ./config/wezterm/default.nix { inherit pkgs colors; })
         (import ./config/zsh/default.nix { inherit pkgs; })
     ];

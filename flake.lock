@@ -36,10 +36,27 @@
         "type": "github"
       }
     },
+    "nixpkgs-chrjabs": {
+      "locked": {
+        "lastModified": 1751364620,
+        "narHash": "sha256-0SAFta3RzInocZ8n9h7qMI6deKL3GsEzlnUBVPcyG1E=",
+        "owner": "chrjabs",
+        "repo": "nixpkgs",
+        "rev": "b39a9d979c20a4242ee725bebdff7b773638ad21",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chrjabs",
+        "ref": "texlive",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-chrjabs": "nixpkgs-chrjabs"
       }
     }
   },
