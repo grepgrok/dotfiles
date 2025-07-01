@@ -8,14 +8,11 @@
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = { nixpkgs, home-manager, ... }:
-    let
-        system = "aarch64-darwin";
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-    in
+    outputs = inputs@{ nixpkgs, home-manager, ... }:
     {
         homeConfigurations."ben" = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
+            pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+            extraSpecialArgs = { inherit inputs; };
             modules = [ ./home.nix ];
         };
     };

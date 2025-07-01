@@ -3,7 +3,7 @@
 #
 # Hint: you need `programs.home-manager.enable = true;`
 # Hint: run `nix eval --impure --expr '(import <nixpkgs>{}).system'` to check current system for pkgs.system
-{ pkgs, lib, ... }:
+{ inputs, pkgs, lib, ... }:
 let
     isMac = (pkgs.system == "aarch64-darwin");
     colors = import ./aesthetics/colors/swamp.nix { };
@@ -20,7 +20,6 @@ in {
     home.packages = with pkgs; [
             luarocks # Lua
             wget
-            wezterm
             git
             lazygit
             curl
