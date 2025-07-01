@@ -1,0 +1,156 @@
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024/nixos.org)  (format=lualatex 1980.1.1)  11 MAY 2025 20:09
+ restricted system commands enabled.
+ file:line:error style messages enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended collection.
+luaotfload | conf : Root cache directory is "/Users/ben/.texlive2024/texmf-var/luatex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-resolved path "/nix/store/04qaz03id7wiqs7r0125j1vsmxsgnms8-texlive-combined-full-2024-final-texmfdist/tex/luatex/luaotfload/fontloader-2023-12-28.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.134
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "/Users/ben/.texlive2024/texmf-var/luatex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `tracingstacklevels' in `input_level_string'. (/nix/store/04qaz03id7wiqs7r0125j1vsmxsgnms8-texlive-combined-full-2024-final-texmfdist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/nix/store/04qaz03id7wiqs7r0125j1vsmxsgnms8-texlive-combined-full-2024-final-texmfdist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from /Users/ben/.texlive2024/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz)
+\c@part=\count194
+\c@section=\count195
+\c@subsection=\count196
+\c@subsubsection=\count197
+\c@paragraph=\count198
+\c@subparagraph=\count199
+\c@figure=\count266
+\c@table=\count267
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen140
+) (/nix/store/04qaz03id7wiqs7r0125j1vsmxsgnms8-texlive-combined-full-2024-final-texmfdist/tex/latex/lipsum/lipsum.sty (/nix/store/04qaz03id7wiqs7r0125j1vsmxsgnms8-texlive-combined-full-2024-final-texmfdist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (/nix/store/04qaz03id7wiqs7r0125j1vsmxsgnms8-texlive-combined-full-2024-final-texmfdist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2025-01-18 L3 programming layer (loader) 
+ (/nix/store/04qaz03id7wiqs7r0125j1vsmxsgnms8-texlive-combined-full-2024-final-texmfdist/tex/latex/l3backend/l3backend-luatex.def
+File: l3backend-luatex.def 2024-05-08 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count268
+Inserting `l3color' in `luaotfload.parse_color'.
+\l__pdf_internal_box=\box52
+))
+Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count269
+\l__lipsum_a_int=\count270
+\l__lipsum_b_int=\count271
+ (/nix/store/04qaz03id7wiqs7r0125j1vsmxsgnms8-texlive-combined-full-2024-final-texmfdist/tex/latex/lipsum/lipsum.ltd.tex)) (./main.aux)
+\openout1 = main.aux
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 11.
+
+
+Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for
+(lipsum)                'english' will be used instead.
+(lipsum)                
+(lipsum)                With LuaTeX, lipsum requires babel to get proper
+(lipsum)                hyphenation (you can use \usepackage[base]{babel}).
+
+./main.tex:13: Undefined control sequence.
+l.13 \lipsum[1-5] \(\mathbb
+                         {F}\) asdf \(FF\)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+
+[1
+
+{/nix/store/rvwaysyhr304bjafzbgqn2ygaqg9kmbm-texlive-combined-full-2024-final/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+./main.tex:15: Undefined control sequence.
+l.15 and the other side \(\mathbb
+                               {C}\mathcal{K}\) \(\mathbb{F}\) asdf;oashdofj...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.tex:15: Undefined control sequence.
+l.15 ...her side \(\mathbb{C}\mathcal{K}\) \(\mathbb
+                                                  {F}\) asdf;oashdofjodjf \(...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+
+[2] (./main.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+)
+
+Here is how much of LuaTeX's memory you used:
+ 877 strings out of 475512
+ 100000,662416 words of node,token memory allocated
+ 406 words of node memory still in use:
+   3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 4 attribute, 48 glue_spec, 4 attribute_list, 1 write nodes
+   avail lists: 2:64,3:43,4:20,5:237,6:18,7:7333,8:3,9:128,10:15,11:547
+ 23953 multiletter control sequences out of 65536+600000
+ 25 fonts using 1345055 bytes
+ 79i,5n,89p,207b,125s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmroman10-regular.otf></nix/store/04qaz03id7wiqs7r0125j1vsmxsgnms8-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></nix/store/04qaz03id7wiqs7r0125j1vsmxsgnms8-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (2 pages, 25683 bytes).
+
+PDF statistics: 26 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 100000000)
+
