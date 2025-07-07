@@ -14,7 +14,6 @@ vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
         --NVIM_ENTER=1
-        print("VimEnter")
         vim.cmd([[call chansend(v:stderr, "\033]1337;SetUserVar=NVIM_ENTER=MQ==\007")]])
     end,
 })

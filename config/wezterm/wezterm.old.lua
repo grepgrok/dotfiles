@@ -67,7 +67,7 @@ config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" } -- font shaping; onl
 
 -- Colors
 config.bold_brightens_ansi_colors = true
-config.color_scheme = "followSystem"
+-- config.color_scheme = "followSystem"
 
 ----- Technical Details -----
 -- TODO: os dependent; if mac then WebGpu else OpenGL

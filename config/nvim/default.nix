@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, colors, ... }:
 let
     linterLanguages = packages: with packages; [
         c
@@ -82,10 +82,8 @@ in
     programs.neovim = {
         enable = true;
         extraPackages = with pkgs; [
-            # LazyVim
             lua-language-server
             stylua
-            # Telescope
             ripgrep
         ];
 
@@ -123,4 +121,8 @@ in
             })
             '';
     };
+
+    imports = [
+        # (import ./colors/base16.nix { inherit colors; })
+    ];
 }

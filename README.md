@@ -16,6 +16,16 @@ darwin-rebuild build --flake .#Borealis
 
 ## Colors
 
+### Color Scripts
+
+Color scripts are avilable under `./aesthetics/eyecandy/`. One particularly useful
+one is `blocks` which simply displays 4-bit ANSI in a predictable order.
+
+```bash
+Plain:   black red green yellow blue magenta cyan white
+Brights:   -    -     -     -     -     -      -    -
+```
+
 ### Swamp
 
 | Wezterm Role  | Hex     | HSL                    | Origin            |
