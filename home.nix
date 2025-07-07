@@ -29,13 +29,13 @@ in {
         lazygit
         curl
         fzf
+        element-desktop
     ];
 
     xdg.enable = true; # Tell programs to use ~/.config
 
     programs.home-manager.enable = true; # let home-manager manager itself
 
-    programs.wezterm.enable = true;
     stylix.enable = true;
     stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
 
@@ -44,7 +44,7 @@ in {
         (import ./config/git/default.nix { inherit pkgs lib; })
         (import ./config/nvim/default.nix { inherit pkgs lib colors; })
         (import ./config/tex/default.nix { inherit pkgs pkgs-texlive; })
-        # (import ./config/wezterm/default.nix { inherit pkgs colors; })
+        (import ./config/wezterm/default.nix { inherit pkgs colors; })
         (import ./config/zsh/default.nix { inherit pkgs; })
     ];
 }

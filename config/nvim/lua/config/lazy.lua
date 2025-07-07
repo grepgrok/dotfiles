@@ -1,3 +1,4 @@
+----- Download lazy.nvim if it doesn't already exist -----
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -14,27 +15,17 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+----- LazyVim Setup -----
 require("lazy").setup({
     spec = {
         -- add LazyVim and import its plugins
         { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-        -- { import = "lazyvim.plugins.extras.lang.tex" },
-        -- { import = "lazyvim.plugins.extras.lang.haskell" },
-        -- { import = "lazyvim.plugins.extras.lang.json" },
-        -- { import = "lazyvim.plugins.extras.lang.markdown" },
-        -- { import = "lazyvim.plugins.extras.lang.toml" },
-        -- { import = "lazyvim.plugins.extras.coding.mini-surround" },
-        -- { import = "lazyvim.plugins.extras.coding.yanky" },
-        -- { import = "lazyvim.plugins.extras.editor.dial" },
-        -- { import = "lazyvim.plugins.extras.editor.inc-rename" },
-        -- { import = "lazyvim.plugins.extras.test.core" },
-        -- { import = "lazyvim.plugins.extras.util.dot" },
-        -- { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-        -- { import = "lazyvim.plugins.extras.coding.luasnip" },
+
         -- import/override with your plugins
         { import = "plugins" },
-        { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
+        -- { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } }, -- I think this is unneccessary
     },
+
     defaults = {
         -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
         -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
@@ -44,19 +35,18 @@ require("lazy").setup({
         version = false, -- always use the latest git commit
         -- version = "*", -- try installing the latest stable version for plugins that support semver
     },
-    install = { colorscheme = { "tokyonight", "habamax" } },
+
+    -- automatically check for plugin updates --
     checker = {
         enabled = true, -- check for plugin updates periodically
         notify = false, -- notify on update
-    }, -- automatically check for plugin updates
+    },
+
     performance = {
         rtp = {
             -- disable some rtp plugins
             disabled_plugins = {
                 "gzip",
-                -- "matchit",
-                -- "matchparen",
-                -- "netrwPlugin",
                 "tarPlugin",
                 "tohtml",
                 "tutor",

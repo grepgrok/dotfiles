@@ -16,6 +16,24 @@ darwin-rebuild build --flake .#Borealis
 
 ## Colors
 
+### Stylix
+
+I am using [Stylix](https://github.com/nix-community/stylix/tree/master) for
+managing colors across applications. One slight problem is that you can't have the
+normal default config file in use because of some collision with how Stylix
+adds the colors (see [known issues](#known-issues)). Instead, use
+
+```nix
+programs.<program>.extraConfig = builtins.readFile <config file path>;
+```
+
+As a matter of standard, I prepend these file names with `hm-init.`. So, for
+Wezterm, I use
+
+```nix
+programs.wezterm.extraConfig = builtins.readFile ./hm-init.wezterm.lua;
+```
+
 ### Color Scripts
 
 Color scripts are avilable under `./aesthetics/eyecandy/`. One particularly useful
@@ -157,10 +175,48 @@ links the `/run/current-system/sw/...` file structure (the `...`) to
 `/Users/$USER/Applications/Home\ Manager\ Apps` (which are actually directly
 linked to the original files in the nix store).
 
+## Known Issues
+
+### Stylix and config files
+
+Many (all?) [Stylix](#stylix) color configurations involve writing to "main config"
+files. For example, Stylix tries to write
+
+```nix
+xdg.configFile."wezterm/wezterm.lua".text = ...;
+```
+
+This conflicts (silently) with the way I include the config files:
+
+```nix
+home.file.".config" = { source = ./config; recursive = true; };
+```
+
+Typically, Home Manager's activation script with `home.file` catches conflicting
+targets --- both for pre-existing files (which it just overwrites) and explicit:
+
+```nix
+home.file = {
+    conflict1 = { text = "foo"; target = "baz"; };
+    conflict2 = { text = "bar"; target = "baz"; };
+}
+```
+
+As noted [above](#stylix), the most straightforward way to handle this nicely
+while still being able to use the normal config file is to include it via
+`extraConfig`. For example, with Wezterm,
+
+```nix
+programs.wezterm.extraConfig = builtins.readFile hm-init.wezterm.lua;
+```
+
+As a standard, I prepend these configs with `hm-init.`.
+
 ## TODO
 
 - make the update thing more in line with nix
 - the functions are more typically nix-able (maybe, or a bashrc is the answer)
 - move to zsh
 - make zsh pretty
+- max `./config/nvim/lua/config/lazy.lua` downloading LazyVim more Nix-like
 - appropriate modules across hosts and user profiles
