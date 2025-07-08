@@ -4,5 +4,5 @@
         # lib.mkIf (!isMac) zathura
         skimpdf
         dbus
-    ] ++ [ pkgs-texlive.texlive.combined.scheme-basic ];
+    ] ++ [ pkgs.texlive.combined.scheme-full ];
 }

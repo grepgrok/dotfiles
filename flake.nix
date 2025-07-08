@@ -3,7 +3,7 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-        nixpkgs-texlive.url = "github:nixos/nixpkgs/master"; # uber unstable and untested
+        # nixpkgs-texlive.url = "github:nixos/nixpkgs/nixpkgs-unstable"; # texlive has a tendency to get unstable
 
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -20,17 +20,15 @@
     } @ inputs:
     let
         system = "aarch64-darwin";
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
     in 
     {
         homeConfigurations."ben" = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+            inherit pkgs;
             extraSpecialArgs = {
                 inherit inputs;
 
-                pkgs-texlive = import inputs.nixpkgs-texlive {
-                    inherit system;
-                    config.allowUnfree = true;
-                };
+                pkgs-texlive = pkgs; # import inputs.nixpkgs-texlive { inherit system; };
             };
             modules = [
                 stylix.homeModules.stylix

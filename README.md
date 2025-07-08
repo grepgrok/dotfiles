@@ -219,4 +219,5 @@ As a standard, I prepend these configs with `hm-init.`.
 - move to zsh
 - make zsh pretty
 - max `./config/nvim/lua/config/lazy.lua` downloading LazyVim more Nix-like
+- how to get custom colorscheme (swamp) with stylix
 - appropriate modules across hosts and user profiles

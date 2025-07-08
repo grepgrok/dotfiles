@@ -6,32 +6,28 @@
 {
     inputs,
     pkgs,
-    pkgs-texlive,
     lib,
     ...
 } @ args:
 let
     colors = import ./aesthetics/colors/swamp.nix { };
-    # subs2cia = import ./pkgs/subs2cia.nix { inherit pkgs; };
 in {
     # This is required information for home-manager to do its job
     home = {
         stateVersion = "23.11"; # no touchy
         username = "ben";
         homeDirectory = "/Users/ben";
-        # map `./config` dir to `~/.config` dir
+        # map `./modules/config` dir to `~/.config` dir
         file.".config" = { source = ./config; recursive = true; };
     };
 
     home.packages = with pkgs; [
         luarocks # Lua
         wget
-        git
         lazygit
         curl
         fzf
         element-desktop
-        (import ./pkgs/subs2cia.nix { inherit pkgs; })
     ];
 
     xdg.enable = true; # Tell programs to use ~/.config
@@ -39,14 +35,17 @@ in {
     programs.home-manager.enable = true; # let home-manager manager itself
 
     stylix.enable = true;
-    stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-light-soft.yaml";
+    stylix.base16Scheme = ./aesthetics/colors/swamp-dark.yaml;
 
     imports = [
-        # (import ./config/alacritty/default.nix { inherit pkgs; })
-        (import ./config/git/default.nix { inherit pkgs lib; })
-        (import ./config/nvim/default.nix { inherit pkgs lib colors; })
-        (import ./config/tex/default.nix { inherit pkgs pkgs-texlive; })
-        (import ./config/wezterm/default.nix { inherit pkgs colors; })
-        (import ./config/zsh/default.nix { inherit pkgs; })
+        # HM automatically imports from ./modules
+        # https://nix-community.github.io/home-manager/index.xhtml#sec-module-auto-importing
+        ./config/git
+        ./config/nvim
+        ./config/tex
+        ./config/wezterm
+        ./config/zsh
+        ./pkgs/subs2cia.nix
     ];
 }
