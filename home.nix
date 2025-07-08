@@ -12,6 +12,7 @@
 } @ args:
 let
     colors = import ./aesthetics/colors/swamp.nix { };
+    # subs2cia = import ./pkgs/subs2cia.nix { inherit pkgs; };
 in {
     # This is required information for home-manager to do its job
     home = {
@@ -30,6 +31,7 @@ in {
         curl
         fzf
         element-desktop
+        (import ./pkgs/subs2cia.nix { inherit pkgs; })
     ];
 
     xdg.enable = true; # Tell programs to use ~/.config
