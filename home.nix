@@ -28,6 +28,7 @@ in {
         curl
         fzf
         element-desktop
+        qbittorrent
     ];
 
     xdg.enable = true; # Tell programs to use ~/.config
