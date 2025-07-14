@@ -221,3 +221,7 @@ As a standard, I prepend these configs with `hm-init.`.
 - max `./config/nvim/lua/config/lazy.lua` downloading LazyVim more Nix-like
 - how to get custom colorscheme (swamp) with stylix
 - appropriate modules across hosts and user profiles
+- get `./pkgs` to be more atomized: I want to be able to just import the package
+  appropriately regardless of for a shell or Home Manager
+  - also, use some `requirements.txt` or `setup.py` instead of manually adding
+    the packages
