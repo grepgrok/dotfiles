@@ -27,30 +27,28 @@ let
         mapAttrs;
     inherit (lib)
         flatten
-        foldl;
+        foldl
+        pipe;
+    get_substitution' = attrs: prefix: acc: attr:
+        if !(isString (getAttr attr attrs)) then acc
+        else acc ++ [
+            "--replace-quiet"
+            (prefix + attr)
+            (if wrap
+            then wrapWith.left + getAttr attr attrs + wrapWith.right
+            else getAttr attr attrs)
+        ];
     # prefix --- prefix for replacements
     # attrs  --- the attribute set to replace through
     # wrap   --- whether or not to wrap the text with quotes
-    replace' = {prefix, attrs, wrap, wrapWith}:
-        foldl (acc: attr:
-            if !(isString (getAttr attr attrs))
-            then acc
-            else acc ++ [
-                "--replace-quiet"
-                (prefix + attr)
-                (if wrap
-                then wrapWith.left + getAttr attr attrs + wrapWith.right
-                else "${attrs."${attr}"}")
-            ])
-            []
-            (attrNames attrs);
+    replace' = wrap: wrapWith: prefix: attrs: foldl (get_substitution' attrs prefix) [] (attrNames attrs);
 in
 # https://nixos.org/manual/nixpkgs/stable/#pkgs-substitute
 pkgs.substitute {
     inherit src;
-    # 2. then flatten the values (substitutions)
-    substitutions = flatten(attrValues
-        # 1. get replacements for each prefix
-        (mapAttrs (prefix: attrs: replace' { inherit prefix attrs wrap wrapWith; })
-                  replacements));
+    substitutions = pipe replacements [
+        (mapAttrs (replace' wrap wrapWith))
+        attrValues
+        flatten
+    ];
 } // args
