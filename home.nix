@@ -35,18 +35,15 @@ in {
 
     programs.home-manager.enable = true; # let home-manager manager itself
 
-    stylix.enable = true;
-    # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-light-soft.yaml";
-    stylix.base16Scheme = ./aesthetics/colors/swamp-dark.yaml;
-
     imports = [
-        # HM automatically imports from ./modules
-        # https://nix-community.github.io/home-manager/index.xhtml#sec-module-auto-importing
         ./config/git
         ./config/nvim
         ./config/tex
         ./config/wezterm
         ./config/zsh
+
+        ./aesthetics/colors/swamp
+
         ./pkgs/subs2cia.nix
     ];
 }

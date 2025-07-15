@@ -21,12 +21,15 @@
     let
         system = "aarch64-darwin";
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-    in 
+
+        lib = pkgs.lib.extend
+            (final: prev: home-manager.lib // (import ./lib final pkgs ));
+    in
     {
         homeConfigurations."ben" = home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             extraSpecialArgs = {
-                inherit inputs;
+                inherit inputs lib;
 
                 pkgs-texlive = pkgs; # import inputs.nixpkgs-texlive { inherit system; };
             };
