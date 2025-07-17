@@ -7,7 +7,7 @@
         {
             plugin = pkgs.vimPlugins.mini-nvim;
             type = "lua";
-            config = lib.mkAfter (builtins.readFile (lib.replace {
+            config = lib.mkAfter (builtins.readFile (lib.my.replace {
                 src = ./neovim.lua;
                 replacements = {
                     "palette." = config.lib.stylix.colors.withHashtag;

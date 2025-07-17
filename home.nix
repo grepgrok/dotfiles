@@ -5,6 +5,7 @@
 # Hint: run `nix eval --impure --expr '(import <nixpkgs>{}).system'` to check current system for pkgs.system
 {
     inputs,
+    outputs,
     pkgs,
     lib,
     ...

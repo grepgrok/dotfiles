@@ -13,23 +13,25 @@
     };
 
     outputs = {
+        self,
         nixpkgs,
         home-manager,
         stylix,
         ...
     } @ inputs:
     let
+        inherit (self) outputs;
         system = "aarch64-darwin";
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
 
-        lib = pkgs.lib.extend
-            (final: prev: home-manager.lib // (import ./lib final pkgs ));
+        mkLib = (import ./lib).mkLib home-manager;
+        lib = mkLib pkgs;
     in
-    {
+    rec {
         homeConfigurations."ben" = home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             extraSpecialArgs = {
-                inherit inputs lib;
+                inherit inputs outputs lib;
 
                 pkgs-texlive = pkgs; # import inputs.nixpkgs-texlive { inherit system; };
             };

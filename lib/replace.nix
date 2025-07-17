@@ -10,7 +10,7 @@
 # wrapWith --- attrset { left = ...; right = ...; }
 #               left and right wrapping items
 #               default: { left = "\"""; right = "\""; }
-{lib, pkgs}:
+{ pkgs, lib }:
 {
     src,
     replacements,
