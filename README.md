@@ -14,6 +14,19 @@ darwin-rebuild build --flake .#Borealis
 
 `config` is directly linked to `~/.config` and is the dotfiles.
 
+`pkgs` carries a number of additional packages not in the `nixpkgs`. This is used,
+e.g., to add some python programs.
+
+`nixpkgs.nix` is `import`-able for defaulting as `pkgs`:
+
+```nix
+{ pkgs ? (import ./path/to/nixpkgs.nix) {}, ... }:
+# ...
+```
+
+`overlays/default.nix` handles some common overlays --- extensions/modifications
+to `nixpkgs`, including to `lib` and `pkgs`.
+
 ## Colors
 
 ### Stylix

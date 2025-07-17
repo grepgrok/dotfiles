@@ -28,6 +28,8 @@
         lib = mkLib pkgs;
     in
     rec {
+        overlays = import ./overlays { inherit inputs; };
+
         homeConfigurations."ben" = home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             extraSpecialArgs = {

@@ -22,6 +22,10 @@ in {
         file.".config" = { source = ./config; recursive = true; };
     };
 
+    nixpkgs.overlays = [
+        outputs.overlays.additions
+    ];
+
     home.packages = with pkgs; [
         luarocks # Lua
         wget
@@ -44,7 +48,5 @@ in {
         ./config/zsh
 
         ./aesthetics/colors/swamp
-
-        ./pkgs/subs2cia.nix
     ];
 }
