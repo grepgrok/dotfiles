@@ -24,7 +24,7 @@
         system = "aarch64-darwin";
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
 
-        mkLib = (import ./lib).mkLib home-manager;
+        mkLib = (import ./lib).mkLib home-manager.lib;
         lib = mkLib pkgs;
     in
     rec {
