@@ -27,13 +27,13 @@ in {
     ];
 
     home.packages = with pkgs; [
-        luarocks # Lua
-        wget
-        lazygit
         curl
-        fzf
         element-desktop
+        fzf
+        lazygit
+        luarocks # Lua
         qbittorrent
+        wget
     ];
 
     xdg.enable = true; # Tell programs to use ~/.config
@@ -43,6 +43,7 @@ in {
     imports = [
         ./config/git
         ./config/nvim
+        ./config/starship
         ./config/tex
         ./config/wezterm
         ./config/zsh

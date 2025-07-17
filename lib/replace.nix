@@ -10,6 +10,8 @@
 # wrapWith --- attrset { left = ...; right = ...; }
 #               left and right wrapping items
 #               default: { left = "\"""; right = "\""; }
+# returns:
+#  path to modified file
 { pkgs, lib }:
 {
     src,

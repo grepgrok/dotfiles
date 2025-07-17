@@ -188,6 +188,13 @@ links the `/run/current-system/sw/...` file structure (the `...`) to
 `/Users/$USER/Applications/Home\ Manager\ Apps` (which are actually directly
 linked to the original files in the nix store).
 
+## Tips and Tricks
+
+You can use `lib.mapAttrsRecursive (_: lib.mkForce) attrset` to apply `mkForce`
+to the *leaves* of `attrset`. This is particularly useful when overriding a large
+number of individual options without having to use `mkForce` on each and every
+option; common in hand-resolving colors.
+
 ## Known Issues
 
 ### Stylix and config files
