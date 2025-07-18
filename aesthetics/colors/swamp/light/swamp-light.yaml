@@ -4,14 +4,14 @@ author: "Mujtaba Asim"
 description: "swampy colors pulled from https://github.com/masroof-maindak/nvim/blob/9b082b06b797d96f92c33990a7fe3e18ef8d056b/colors/swamp.lua"
 variant: "light"
 palette:
-  base00: "f1e3d1" #f1e3d1 # default bg
-  base01: "ddcebc" #ddcebc # alt bg
-  base02: "c9b9a7" #c9b9a7 # selection bg
-  base03: "b5a492" #b5a492 # alt2 bg (or comments)
-  base04: "a0907d" #a0907d # alt fg
-  base05: "64513e" #64513e # default fg
-  base06: "786653" #786653 # polar fg
-  base07: "8c7b68" #8c7b68 # polar bg
+  base00: "f1e3d1" #f1e3d1 default bg
+  base01: "ddcebc" #ddcebc alt bg
+  base02: "c9b9a7" #c9b9a7 selection bg
+  base03: "b5a492" #b5a492 alt2 bg (or comments)
+  base04: "a0907d" #a0907d alt fg
+  base05: "64513e" #64513e default fg
+  base06: "786653" #786653 polar fg
+  base07: "8c7b68" #8c7b68 polar bg
   base08: "d09700" #d09700 red
   base09: "64513e" #64513e orange
   base0A: "993333" #993333 yellow

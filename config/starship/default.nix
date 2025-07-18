@@ -7,16 +7,22 @@
         ./starship.toml
     ]) // {
         palettes.base16 = with config.lib.stylix.colors.withHashtag; {
-            color_fg0 = base05;
-            color_bg1 = base01;
-            color_bg3 = base02;
-            color_blue = blue;
-            color_aqua = cyan;
-            color_green = green;
-            color_orange = orange;
-            color_purple = magenta;
-            color_red = red;
-            color_yellow = yellow;
+            # gruvbox-rainbow colors
+            color_time_text = base05;
+            color_devenv_text = base05;
+            color_language_text = base05;
+            color_git_text = base05;
+            color_os_username_text = base05;
+            color_directory_text = base05;
+            color_time = base01;
+            color_devenv = base02;
+            color_language = blue;
+            color_git = cyan;
+            color_os_username = orange;
+            color_directory = yellow;
+            color_success = green;
+            color_replace_symbol = magenta;
+            color_error = red;
         };
     };
 }

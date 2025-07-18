@@ -51,6 +51,6 @@ in {
         ./config/wezterm
         ./config/zsh
 
-        ./aesthetics/colors/swamp
+        ./aesthetics/colors/swamp/light
     ];
 }

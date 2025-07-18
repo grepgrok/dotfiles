@@ -1,0 +1,22 @@
+system: "base16"
+name: "swamp"
+author: "Mujtaba Asim"
+description: "swampy colors pulled from https://github.com/masroof-maindak/nvim/blob/9b082b06b797d96f92c33990a7fe3e18ef8d056b/colors/swamp.lua"
+variant: "dark"
+palette:
+  base00: "242015" #242015 default bg
+  base01: "3a3124" #3a3124 alt bg
+  base02: "4d3f32" #4d3f32 selection bg
+  base03: "5f4e41" #5f4e41 alt2 bg (or comments)
+  base04: "b8a58c" #b8a58c alt fg
+  base05: "d2c3a4" #d2c3a4 default fg
+  base06: "ebe0bb" #ebe0bb polar fg
+  base07: "f1e9d0" #f1e9d0 polar bg
+  base08: "db930d" #db930d red
+  base09: "ebe0bb" #ebe0bb orange
+  base0A: "a82d56" #a82d56 yellow
+  base0B: "7a7653" #7a7653 green
+  base0C: "db930d" #db930d cyan
+  base0D: "c1666b" #c1666b blue
+  base0E: "91506c" #91506c magenta
+  base0F: "61a0a8" #61a0a8 brown
