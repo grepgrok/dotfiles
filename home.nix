@@ -10,9 +10,7 @@
     lib,
     ...
 } @ args:
-let
-    colors = import ./aesthetics/colors/swamp.nix { };
-in {
+{
     # This is required information for home-manager to do its job
     home = {
         stateVersion = "23.11"; # no touchy

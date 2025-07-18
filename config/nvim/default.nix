@@ -1,4 +1,4 @@
-{ pkgs, lib, colors, ... }:
+{ pkgs, lib, ... }:
 let
     linterLanguages = packages: with packages; [
         c
@@ -41,8 +41,4 @@ in
 
         extraLuaConfig = builtins.readFile ./hm-init.init.lua;
     };
-
-    imports = [
-        # (import ./colors/base16.nix { inherit colors; })
-    ];
 }
