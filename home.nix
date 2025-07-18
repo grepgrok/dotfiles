@@ -53,5 +53,6 @@ in {
 
         ./aesthetics/colors/swamp/light
         ./aesthetics/eyecandy/colorscripts.nix
+        ./aesthetics/eyecandy/fastfetch.nix
     ];
 }
