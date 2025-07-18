@@ -24,6 +24,7 @@ in {
 
     nixpkgs.overlays = [
         outputs.overlays.additions
+        outputs.overlays.stable
     ];
 
     home.packages = with pkgs; [

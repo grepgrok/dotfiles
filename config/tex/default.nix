@@ -4,5 +4,6 @@
         # lib.mkIf (!isMac) zathura
         skimpdf
         dbus
-    ] ++ [ pkgs.texlive.combined.scheme-full ];
+        stable.texlive.combined.scheme-full # the actual texlive has a tendency to be unstable
+    ];
 }

@@ -3,7 +3,7 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-        # nixpkgs-texlive.url = "github:nixos/nixpkgs/nixpkgs-unstable"; # texlive has a tendency to get unstable
+        nixpkgs-stable.url = "github:nixos/nixpkgs/release-25.05"; # texlive has a tendency to get unstable
 
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -34,8 +34,6 @@
             inherit pkgs;
             extraSpecialArgs = {
                 inherit inputs outputs lib;
-
-                pkgs-texlive = pkgs; # import inputs.nixpkgs-texlive { inherit system; };
             };
             modules = [
                 stylix.homeModules.stylix
