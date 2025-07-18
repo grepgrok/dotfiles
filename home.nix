@@ -52,5 +52,6 @@ in {
         ./config/zsh
 
         ./aesthetics/colors/swamp/light
+        ./aesthetics/eyecandy/colorscripts.nix
     ];
 }
