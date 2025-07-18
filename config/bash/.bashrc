@@ -1,14 +1,3 @@
-# Compile and link assembly
-function clas() {
-    FILENAME=$1
-    as $1
-    ld -o ${FILENAME%.*} a.out \
-        -lSystem \
-        -syslibroot $(xcrun -sdk macosx --show-sdk-path) \
-        -e _start
-    rm a.out
-}
-
 # Get the basename of the current working directory, even if pwd has spaces
 function mark() {
     #| $PWD              is a variable to the current working directory (more efficient than $(pwd))
@@ -21,19 +10,6 @@ function mark() {
 
 function ip() {
     /sbin/ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'
-}
-
-function updateprograms() {
-    # Homebrew
-    brew update && brew upgrade
-    # npm
-    npm install -g npm-check-updates && ncu -u && npm fund
-    # pip
-    python3 -m pip3 install --upgrade pip3
-    ## pip packages
-    pip3 --disable-pip-version-check list --outdated --format=json | python3 -c "import json, sys; print('\n'.join([x['name'] for x in json.load(sys.stdin)]))"
-    # Rust
-    rustup update
 }
 
 # texgrep - searches for a text pattern contained in files
