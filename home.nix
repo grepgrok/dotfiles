@@ -32,6 +32,7 @@ in {
         fzf
         lazygit
         luarocks # Lua
+        mkvtoolnix
         qbittorrent
         wget
     ];
