@@ -44,6 +44,7 @@ in {
 
     imports = [
         ./config/git
+        ./config/nh
         ./config/nvim
         ./config/starship
         ./config/tex
