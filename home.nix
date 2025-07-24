@@ -20,6 +20,9 @@
         file.".config" = { source = ./config; recursive = true; };
     };
 
+    nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.allowUnfreePredicate = _pkg: true;
+
     nixpkgs.overlays = [
         outputs.overlays.additions
         outputs.overlays.stable
@@ -34,6 +37,10 @@
         mkvtoolnix
         qbittorrent
         wget
+
+        zoom-us # TODO: islate this (and other privacy concerning apps)
+        zotero
+        discord
     ];
 
     xdg.enable = true; # Tell programs to use ~/.config
@@ -41,13 +48,7 @@
     programs.home-manager.enable = true; # let home-manager manager itself
 
     imports = [
-        ./config/git
-        ./config/nh
-        ./config/nvim
-        ./config/starship
-        ./config/tex
-        ./config/wezterm
-        ./config/zsh
+        ./config
 
         ./aesthetics/colors/swamp/light
         ./aesthetics/eyecandy/colorscripts.nix

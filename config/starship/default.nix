@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ pkgs, lib, config, ... }:
 {
     programs.starship.enable = true;
     programs.starship.settings = (lib.my.mergeTOML [

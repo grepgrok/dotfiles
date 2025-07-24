@@ -33,7 +33,7 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 	end
 end)
 
-config.window_background_opacity = 0.7
+config.window_background_opacity = 0.9
 config.inactive_pane_hsb = {
 	saturation = 1.0,
 	brightness = 0.8,

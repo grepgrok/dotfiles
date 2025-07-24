@@ -234,14 +234,39 @@ As a standard, I prepend these configs with `hm-init.`.
 
 ## TODO
 
-- make the update thing more in line with nix
-- the functions are more typically nix-able (maybe, or a bashrc is the answer)
-- move to zsh
-- make zsh pretty
-- max `./config/nvim/lua/config/lazy.lua` downloading LazyVim more Nix-like
-- how to get custom colorscheme (swamp) with stylix
+- make `./config/nvim/lua/config/lazy.lua` downloading LazyVim more Nix-like
 - appropriate modules across hosts and user profiles
-- get `./pkgs` to be more atomized: I want to be able to just import the package
-  appropriately regardless of for a shell or Home Manager
-  - also, use some `requirements.txt` or `setup.py` instead of manually adding
-    the packages
+- update READMEs
+- use some `requirements.txt` or `setup.py` instead of manually adding
+    the packages in `pkgs`
+- [firefox](https://nix-community.github.io/home-manager/options.xhtml#opt-programs.firefox.enable)
+  - sort out browser extensions
+- [spotify](https://nixos.wiki/wiki/Spotify)
+- [steam](https://wiki.nixos.org/wiki/Steam)
+- [obsidian](https://nix-community.github.io/home-manager/options.xhtml#opt-programs.obsidian.enable)
+  - should just look into switching to [neorg](https://github.com/nvim-neorg/neorg)
+- [chrome](https://unix.stackexchange.com/questions/429765/howto-install-google-chrome-in-nixos)
+  - for when firefox doesn't work. mostly for [asbplayer](https://docs.asbplayer.dev/docs/intro)
+  - sort out browser extensions
+- [1password](https://wiki.nixos.org/wiki/1Password)
+- [brother iprint and scan](https://nixos.wiki/wiki/Scanners#Brother)
+- [TagStudio](https://github.com/TagStudioDev/TagStudiohttps://github.com/TagStudioDev/TagStudio)
+- wallpaper sizer
+- clear out unused applications
+- finder open text files with nvim
+- handle more apps. many should be deleted. Or moved to some workspace so they
+    are only installed when I want.
+- style:
+  - [discord](https://wiki.nixos.org/wiki/Discord)
+    - get discord in bar to follow current version
+    - some setting about following keystrokes?
+  - zotero
+  - zoom-us
+- unknown:
+  - notability
+  - signal
+    - `signal-desktop`?
+    - this should only build for things it is available for. Otherwise, only if
+        not already installed, warn it wasn't included and say where to get it
+  - authy
+    - honestly, just start converting things to 1password
