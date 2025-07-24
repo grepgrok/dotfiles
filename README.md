@@ -239,9 +239,6 @@ As a standard, I prepend these configs with `hm-init.`.
 - update READMEs
 - use some `requirements.txt` or `setup.py` instead of manually adding
     the packages in `pkgs`
-- [firefox](https://nix-community.github.io/home-manager/options.xhtml#opt-programs.firefox.enable)
-  - sort out browser extensions
-- [spotify](https://nixos.wiki/wiki/Spotify)
 - [steam](https://wiki.nixos.org/wiki/Steam)
 - [obsidian](https://nix-community.github.io/home-manager/options.xhtml#opt-programs.obsidian.enable)
   - should just look into switching to [neorg](https://github.com/nvim-neorg/neorg)
@@ -262,6 +259,13 @@ As a standard, I prepend these configs with `hm-init.`.
     - some setting about following keystrokes?
   - zotero
   - zoom-us
+  - [firefox](https://nix-community.github.io/home-manager/options.xhtml#opt-programs.firefox.enable)
+    - sort out browser extensions
+    - `warning: stylix: firefox:`config.stylix.targets.firefox.profileNames`is
+        not set. Declare profile names with
+        'config.stylix.targets.firefox.profileNames = [ "<PROFILE_NAME>" ];'.`
+  - [spotify](https://nixos.wiki/wiki/Spotify)
+- sort out spotify firewall ports thing in nix-darwin
 - unknown:
   - notability
   - signal
