@@ -8,8 +8,15 @@
     outputs,
     pkgs,
     lib,
+    config,
     ...
 } @ args:
+let
+    env = {
+        defaultbrowser = "firefox"; # TODO: actually hook this up right
+        isMac = (pkgs.system == "aarch64-darwin" || pkgs.system == "x86_64-darwin");
+    };
+in
 {
     # This is required information for home-manager to do its job
     home = {
@@ -44,8 +51,15 @@
     ];
 
     xdg.enable = true; # Tell programs to use ~/.config
-
     programs.home-manager.enable = true; # let home-manager manager itself
+
+    home.activation = {
+        defaultBrowser = lib.mkIf env.isMac (lib.hm.dag.entryAfter ["installPackages"] ''
+            run echo "Setting default browser to ${env.defaultbrowser}"
+            # set default browser
+            run ${pkgs.defaultbrowser}/bin/defaultbrowser ${env.defaultbrowser}
+        '');
+    };
 
     imports = [
         ./config
