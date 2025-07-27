@@ -18,12 +18,12 @@ in
                 { path = "${pkgs.discord}/Applications/Discord.app/"; })
             { path = "/System/Applications/Messages.app/"; }
             { path = "/Applications/Signal.app/"; }
-            { path = "/Applications/Steam.app/"; }
+            # { path = "/Applications/Steam.app/"; }
             (lib.mkIf config.programs.wezterm.enable
                 { path = "${pkgs.wezterm}/Applications/Wezterm.app/"; }) # should be whatever is the current terminal
             { path = "/Applications/Anki.app/"; }
             { path = "/Applications/Obsidian.app/"; }
-            { path = "/Applications/Notability.app/"; }
+            # { path = "/Applications/Notability.app/"; }
             { path = "/System/Applications/Notes.app/"; }
         ];
     };

@@ -40,7 +40,7 @@ buildPythonPackage rec {
     meta = {
         description = "Extract subtitled dialogue from audiovisual media for use in language acquisition";
         homepage = "https://github.com/dxing97/subs2cia";
-        license = lib.license.mit;
+        license = lib.licenses.mit;
         platforms = lib.platforms.all;
         badPlatforms = [ ];
     };

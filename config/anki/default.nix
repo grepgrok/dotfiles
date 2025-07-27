@@ -4,5 +4,5 @@
         enable = true;
         # TODO:
         addons = [ ];
-    }
+    };
 }

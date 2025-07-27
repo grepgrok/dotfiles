@@ -248,12 +248,19 @@ As a standard, I prepend these configs with `hm-init.`.
 - [1password](https://wiki.nixos.org/wiki/1Password)
 - [brother iprint and scan](https://nixos.wiki/wiki/Scanners#Brother)
 - [TagStudio](https://github.com/TagStudioDev/TagStudiohttps://github.com/TagStudioDev/TagStudio)
+- tests
 - Tor
+- electric sheep
 - wallpaper sizer
 - clear out unused applications
 - finder open text files with nvim
 - handle more apps. many should be deleted. Or moved to some workspace so they
     are only installed when I want
+  - Blender
+  - gimp & inkscape
+  - unity
+  - audacity
+  - praat
 - style:
   - [discord](https://wiki.nixos.org/wiki/Discord)
     - get discord in bar to follow current version

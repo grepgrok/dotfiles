@@ -43,6 +43,7 @@ in
         luarocks # Lua
         mkvtoolnix
         qbittorrent
+        subs2cia
         wget
 
         zoom-us # TODO: islate this (and other privacy concerning apps)
