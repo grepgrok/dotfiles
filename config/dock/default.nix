@@ -14,8 +14,7 @@ in
                 { path = "${pkgs.firefox}/Applications/Firefox.app/"; })
             (checkInstalled pkgs.spotify
                 { path = "${pkgs.spotify}/Applications/Spotify.app/"; })
-            (checkInstalled pkgs.discord
-                { path = "${pkgs.discord}/Applications/Discord.app/"; })
+            { path = "/Applications/Discord.app/"; }
             { path = "/System/Applications/Messages.app/"; }
             { path = "/Applications/Signal.app/"; }
             # { path = "/Applications/Steam.app/"; }

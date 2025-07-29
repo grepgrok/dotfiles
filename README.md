@@ -261,10 +261,11 @@ As a standard, I prepend these configs with `hm-init.`.
   - unity
   - audacity
   - praat
+- [discord](https://wiki.nixos.org/wiki/Discord)
+  - infinite updating problem
+  - get discord in bar to follow current version
+  - some setting about following keystrokes?
 - style:
-  - [discord](https://wiki.nixos.org/wiki/Discord)
-    - get discord in bar to follow current version
-    - some setting about following keystrokes?
   - zotero
   - zoom-us
   - [firefox](https://nix-community.github.io/home-manager/options.xhtml#opt-programs.firefox.enable)

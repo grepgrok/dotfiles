@@ -48,7 +48,7 @@ in
 
         zoom-us # TODO: islate this (and other privacy concerning apps)
         zotero
-        discord
+        #discord
     ];
 
     xdg.enable = true; # Tell programs to use ~/.config
