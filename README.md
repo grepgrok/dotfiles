@@ -275,6 +275,23 @@ As a standard, I prepend these configs with `hm-init.`.
         'config.stylix.targets.firefox.profileNames = [ "<PROFILE_NAME>" ];'.`
   - [spotify](https://nixos.wiki/wiki/Spotify)
 - sort out spotify firewall ports thing in nix-darwin
+- Neorg Keybinds ~
+  - Neorg is configured to use keybind preset `neorg`
+  - ⚠️ WARNING Key `<` conflicts with a key bound by the user. Neorg will not
+  bind this key.
+    - ADVICE:
+      - consider mapping `<Plug>(neorg.promo.demote.range)` to a different key
+      than the one bound by Neorg.
+  - ⚠️ WARNING Key `>` conflicts with a key bound by the user. Neorg will not
+  bind this key.
+    - ADVICE:
+      - consider mapping `<Plug>(neorg.promo.promote.range)` to a different key
+      than the one bound by Neorg.
+  - ⚠️ WARNING Key `gO` conflicts with a key bound by the user. Neorg will not
+  bind this key.
+    - ADVICE:
+      - consider mapping `<cmd>Neorg toc<CR>` to a different key than the one
+      bound by Neorg.
 - unknown:
   - notability
   - signal
