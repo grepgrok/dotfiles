@@ -5,6 +5,7 @@
         ./dock
         ./firefox
         ./git
+        ./inkscape
         ./nh
         ./nvim
         ./spotify

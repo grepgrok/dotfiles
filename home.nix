@@ -46,7 +46,7 @@ in
         subs2cia
         wget
 
-        zoom-us # TODO: islate this (and other privacy concerning apps)
+        # zoom-us # TODO: islate this (and other privacy concerning apps)
         zotero
         #discord
     ];
