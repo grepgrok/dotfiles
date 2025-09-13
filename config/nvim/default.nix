@@ -33,6 +33,11 @@ in
             lua-language-server
             stylua
             ripgrep
+            imagemagick # image.nvim
+        ];
+
+        extraLuaPackages = ps: with ps; [
+            ps.magick # iamge.nvim
         ];
 
         plugins = with pkgs.vimPlugins; [
