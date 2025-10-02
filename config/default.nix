@@ -1,11 +1,12 @@
 { ... }:
 {
     imports = [
+        ./_1password
         #./anki
         ./dock
         ./firefox
         ./git
-        ./inkscape
+        # ./inkscape
         ./nh
         ./nvim
         ./spotify

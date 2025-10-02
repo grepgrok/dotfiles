@@ -4,6 +4,7 @@ let
     inkscapeExtensions = with pkgs.inkscape-extensions; [];
 in {
     home.packages = with pkgs; [
-        (inkscape-with-extensions.override { inherit inkscapeExtensions; })
+        # (inkscape-with-extensions.override { inherit inkscapeExtensions; })
+        inkscape
     ];
 }
