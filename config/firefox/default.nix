@@ -4,7 +4,7 @@
         enable = true;
     };
 
-    /*
+    /*! ERROR
      * Activating checkLinkTargets
      * Please do one of the following:
      * - Move or remove the files below and try again.

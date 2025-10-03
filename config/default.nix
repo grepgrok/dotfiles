@@ -5,6 +5,7 @@
         #./anki
         ./dock
         ./firefox
+        # ./gimp # LINUX
         ./git
         # ./inkscape
         ./nh
