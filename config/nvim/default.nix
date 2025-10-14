@@ -37,7 +37,7 @@ in
         ];
 
         extraLuaPackages = ps: with ps; [
-            ps.magick # iamge.nvim
+            ps.magick # image.nvim
         ];
 
         plugins = with pkgs.vimPlugins; [
