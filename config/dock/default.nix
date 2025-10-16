@@ -12,6 +12,8 @@ in
         entries = [
             (lib.mkIf config.programs.firefox.enable
                 { path = "${pkgs.firefox}/Applications/Firefox.app/"; })
+            (lib.mkIf (!config.programs.firefox.enable)
+                { path = "/Applications/Firefox.app/"; })
             (checkInstalled pkgs.spotify
                 { path = "${pkgs.spotify}/Applications/Spotify.app/"; })
             { path = "/Applications/Discord.app/"; }
