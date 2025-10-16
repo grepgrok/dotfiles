@@ -18,6 +18,11 @@ local s = ls.extend_decorator.apply(ls.snippet, decorator) --[[@as function]]
 local f = ls.function_node
 local t = ls.text_node
 
+local GREEK =
+    "alpha\\|beta\\|gamma\\|delta\\|epsilon\\|varepsilon\\|zeta\\|eta\\|theta\\|vartheta\\|iota\\|kappa\\|lambda\\|mu\\|nu\\|xi\\|pi\\|varpi\\|rho\\|varrho\\|sigma\\|varsigma\\|tau\\|upsilon\\|phi\\|varphi\\|chi\\|psi\\|omega\\|Gamma\\|Delta\\|Theta\\|Lambda\\|Xi\\|Pi\\|Sigma\\|Upsilon\\|Phi\\|Chi\\|Psi\\|Omega"
+
+local TIGHTEN_ON = ",\\|\\\\)\\|)\\|\\^"
+
 -- First list: controlled snippets (show up as autocomplete options)
 -- Second list: autosnippets
 return {
@@ -51,8 +56,9 @@ return {
 
     s({ trig = "cup", name = "set union" }, t("\\cup ")),
     s({ trig = "cap", name = "set intersection" }, t("\\cap ")),
-    s({ trig = "eset", name = "emptyset" }, t("\\emptyset ")),
-    s({ trig = "00", name = "emptyset" }, t("\\emptyset ")),
+    s({ trig = "eset", name = "e(mpty)set" }, t("\\emptyset ")),
+    s({ trig = "00", name = "emptyset 00" }, t("\\emptyset ")),
+    s({ trig = "\\%[ ]compl", name = "complement" }, t("^\\complement")),
     s(
         { trig = "\\(\\%[,]\\)\\.\\.\\.", name = "dots" },
         f(function(_, snip)
@@ -61,6 +67,12 @@ return {
         end, {})
     ),
     s({ trig = "\\\\dots ,", name = "comma dots", condition = is_math }, t("\\dots,")),
+    s(
+        { trig = string.format("\\C\\\\\\(%s\\) \\(%s\\)", GREEK, TIGHTEN_ON) },
+        f(function(_, snip)
+            return "\\" .. snip.captures[1] .. snip.captures[2]
+        end, {})
+    ),
 
     -- TODO: liminf -> \liminf NOT lim\inf
     --parse({ trig = "liminf", name = "liminf", priority = 0 }, "\\liminf_{${1:n} \\to ${2:\\infty}} "),
