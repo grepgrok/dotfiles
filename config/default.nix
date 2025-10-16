@@ -4,8 +4,8 @@
         ./_1password
         #./anki
         ./dock
-        ./firefox
-        # ./gimp # LINUX
+        #./firefox
+        # ./gimp
         ./git
         # ./inkscape
         ./nh

@@ -233,7 +233,7 @@ programs.wezterm.extraConfig = builtins.readFile hm-init.wezterm.lua;
 As a standard, I prepend these configs with `hm-init.`.
 
 ## TODO
-
+- make usre nvim docs are downloaded?
 - make `./config/nvim/lua/config/lazy.lua` downloading LazyVim more Nix-like
 - appropriate modules across hosts and user profiles
 - update READMEs
