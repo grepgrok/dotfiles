@@ -66,9 +66,12 @@ return {
             return prefix .. "\\dots "
         end, {})
     ),
-    s({ trig = "\\\\dots ,", name = "comma dots", condition = is_math }, t("\\dots,")),
-    s(
-        { trig = string.format("\\C\\\\\\(%s\\) \\(%s\\)", GREEK, TIGHTEN_ON) },
+    ls.snippet(
+        {
+            trig = string.format("\\C\\\\\\(%s\\|dots\\) \\(%s\\)", GREEK, TIGHTEN_ON),
+            trigEngine = "vim",
+            wordTrig = false,
+        },
         f(function(_, snip)
             return "\\" .. snip.captures[1] .. snip.captures[2]
         end, {})
