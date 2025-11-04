@@ -10,6 +10,8 @@
 
         stylix.url = "github:danth/stylix";
         stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+        mac-app-util.url = "github:hraban/mac-app-util";
     };
 
     outputs = {
@@ -17,6 +19,7 @@
         nixpkgs,
         home-manager,
         stylix,
+        mac-app-util,
         ...
     } @ inputs:
     let
@@ -37,6 +40,7 @@
             };
             modules = [
                 stylix.homeModules.stylix
+                mac-app-util.homeManagerModules.default
                 ./home.nix
             ];
         };
