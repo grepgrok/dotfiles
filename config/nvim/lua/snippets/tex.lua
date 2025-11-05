@@ -21,7 +21,7 @@ local t = ls.text_node
 local GREEK =
     "alpha\\|beta\\|gamma\\|delta\\|epsilon\\|varepsilon\\|zeta\\|eta\\|theta\\|vartheta\\|iota\\|kappa\\|lambda\\|mu\\|nu\\|xi\\|pi\\|varpi\\|rho\\|varrho\\|sigma\\|varsigma\\|tau\\|upsilon\\|phi\\|varphi\\|chi\\|psi\\|omega\\|Gamma\\|Delta\\|Theta\\|Lambda\\|Xi\\|Pi\\|Sigma\\|Upsilon\\|Phi\\|Chi\\|Psi\\|Omega"
 
-local TIGHTEN_ON = ",\\|\\\\)\\|)\\|\\^"
+local TIGHTEN_ON = ",\\|\\\\)\\|\\\\]\\|)\\|\\^\\|("
 
 -- First list: controlled snippets (show up as autocomplete options)
 -- Second list: autosnippets
@@ -68,7 +68,7 @@ return {
     ),
     ls.snippet(
         {
-            trig = string.format("\\C\\\\\\(%s\\|dots\\) \\(%s\\)", GREEK, TIGHTEN_ON),
+            trig = string.format("\\C\\\\\\(%s\\|dots\\|emptyset\\) \\(%s\\)", GREEK, TIGHTEN_ON),
             trigEngine = "vim",
             wordTrig = false,
         },
