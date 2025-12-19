@@ -1,7 +1,4 @@
 { config, pkgs, lib, ... }:
-let
-    checkInstalled = pkg: pathing: lib.mkIf (builtins.elem pkg config.home.packages) pathing;
-in
 {
     imports = [ ./dock ];
 
@@ -10,21 +7,15 @@ in
         enable = true;
         username = config.home.username;
         entries = [
-            (lib.mkIf config.programs.firefox.enable
-                { path = "${pkgs.firefox}/Applications/Firefox.app/"; })
-            (lib.mkIf (!config.programs.firefox.enable)
-                { path = "/Applications/Firefox.app/"; })
-            (checkInstalled pkgs.spotify
-                { path = "${pkgs.spotify}/Applications/Spotify.app/"; })
+            { path = "/Applications/Firefox.app/"; }
+            { path = "/Applications/Spotify.app"; }
             { path = "/Applications/Discord.app/"; }
             { path = "/System/Applications/Messages.app/"; }
             { path = "/Applications/Signal.app/"; }
-            # { path = "/Applications/Steam.app/"; }
             (lib.mkIf config.programs.wezterm.enable
                 { path = "${pkgs.wezterm}/Applications/Wezterm.app/"; }) # should be whatever is the current terminal
             { path = "/Applications/Anki.app/"; }
             { path = "/Applications/Obsidian.app/"; }
-            # { path = "/Applications/Notability.app/"; }
             { path = "/System/Applications/Notes.app/"; }
         ];
     };

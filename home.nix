@@ -37,7 +37,7 @@ in
 
     home.packages = with pkgs; [
         curl
-        element-desktop
+        electricsheep
         fzf
         lazygit
         luarocks # Lua
@@ -45,10 +45,6 @@ in
         qbittorrent
         subs2cia
         wget
-
-        # zoom-us # TODO: islate this (and other privacy concerning apps)
-        zotero
-        #discord
     ];
 
     xdg.enable = true; # Tell programs to use ~/.config
@@ -69,4 +65,6 @@ in
         ./aesthetics/eyecandy/colorscripts.nix
         ./aesthetics/eyecandy/fastfetch.nix
     ];
+
+    stylix.enable = true;
 }
