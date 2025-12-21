@@ -37,7 +37,7 @@ in
 
     home.packages = with pkgs; [
         curl
-        electricsheep
+        # electricsheep
         fzf
         lazygit
         luarocks # Lua
