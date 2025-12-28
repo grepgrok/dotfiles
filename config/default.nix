@@ -3,6 +3,7 @@
     imports = [
         ./dock
         ./git
+        ./inkscape
         ./nh
         ./nvim
         ./starship
