@@ -1,3 +1,4 @@
+# TODO: better name
 # src --- the file the do substitutions on
 # replacements --- attrset of prefixes and matching attrsets effectively a conflation between
 #                   things following the prefix and the attrs of the attrset
