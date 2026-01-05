@@ -23,7 +23,6 @@ require("lazy").setup({
 
         -- import/override with your plugins
         { import = "plugins" },
-        -- { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } }, -- I think this is unneccessary
     },
 
     defaults = {

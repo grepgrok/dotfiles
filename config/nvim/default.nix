@@ -2,23 +2,26 @@
 let
     linterLanguages = packages: with packages; [
         c
-        nix
         haskell
-        markdown
         json
+        lua
+        markdown
+        markdown_inline
+        nix
         rust
         tex
         toml
+        yaml
     ];
 
     dependencies = with pkgs; [
-        git
-        nerd-fonts._0xproto
-        lazygit
         curl
-        fzf
-        ripgrep
         fd
+        fzf
+        git
+        lazygit
+        nerd-fonts._0xproto
+        ripgrep
 
         (pkgs.vimPlugins.nvim-treesitter.withPlugins linterLanguages)
     ];
