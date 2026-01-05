@@ -43,8 +43,11 @@ in
         luarocks # Lua
         mkvtoolnix
         qbittorrent
-        subs2cia
         wget
+
+        # .nix/pkgs/
+        subs2cia
+        #chapterize-audiobooks
     ];
 
     xdg.enable = true; # Tell programs to use ~/.config
