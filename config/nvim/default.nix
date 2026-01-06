@@ -9,7 +9,6 @@ let
         markdown_inline
         nix
         rust
-        tex
         toml
         yaml
     ];
