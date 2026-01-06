@@ -1,11 +1,14 @@
 return {
-    "jalvesaq/zotcite",
+    --"jalvesaq/zotcite",
+    "zotcite",
+    name = "zotcite",
+    dev = { path = "~/Programming/nvim/zotcite/" },
     -- TODO: for some reason, zotcite breaks autosnippets
-    enabled = false,
-    --dependencies = {
-    --"nvim-treesitter/nvim-treesitter",
-    --"nvim-telescope/telescope.nvim",
-    --},
+    --enabled = false,
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+        "nvim-telescope/telescope.nvim",
+    },
     -- TODO: Add menu title under [leader]
     config = function()
         require("zotcite").setup({
