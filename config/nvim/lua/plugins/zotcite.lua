@@ -1,8 +1,6 @@
 return {
     --"jalvesaq/zotcite",
-    "zotcite",
-    name = "zotcite",
-    dev = { path = "~/Programming/nvim/zotcite/" },
+    "grepgrok/zotcite",
     -- TODO: for some reason, zotcite breaks autosnippets
     --enabled = false,
     dependencies = {
