@@ -30,11 +30,12 @@ in
     nixpkgs.config.allowUnfree = true;
     nixpkgs.config.allowUnfreePredicate = _pkg: true;
 
-    nixpkgs.overlays = [
-        outputs.overlays.additions
-        outputs.overlays.stable
-    ];
+    xdg.enable = true; # Tell programs to use ~/.config
+    programs.home-manager.enable = true; # let home-manager manager itself
 
+    nixpkgs.overlays = import ./overlays { inherit inputs; };
+
+    # TODO: Module each of these packages
     home.packages = with pkgs; [
         curl
         # electricsheep
@@ -47,9 +48,7 @@ in
         wget
     ];
 
-    xdg.enable = true; # Tell programs to use ~/.config
-    programs.home-manager.enable = true; # let home-manager manager itself
-
+    # TODO: Module defaultBrowser
     home.activation = {
         defaultBrowser = lib.mkIf env.isMac (lib.hm.dag.entryAfter ["installPackages"] ''
             run echo "Setting default browser to ${env.defaultbrowser}"
@@ -66,5 +65,6 @@ in
         ./aesthetics/eyecandy/fastfetch.nix
     ];
 
+    # Module stylix things
     stylix.enable = true;
 }

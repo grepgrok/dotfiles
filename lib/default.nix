@@ -1,10 +1,11 @@
-rec {
-    mkLib = extended: nixpkgs:
-        nixpkgs.lib.extend
-        (final: prev: extended // { my = lib { pkgs = nixpkgs; lib = final; }; });
-
-    lib = { pkgs ? (import ../nixpkgs.nix) {}, lib ? pkgs.lib }: {
+pkgs:
+pkgs.lib.extend (final: prev:
+    let
+        lib = final;
+    in
+    { my = {
         replace = import ./replace.nix { inherit pkgs lib; };
         mergeTOML = import ./mergeTOML.nix { inherit lib; };
-    };
-}
+    };}
+)
+
