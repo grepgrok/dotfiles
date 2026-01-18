@@ -57,7 +57,13 @@ in
         '');
     };
 
+    programs.git.enable = true;
+    programs.tex.enable = true;
+    programs.nh.enable = true;
+    services.dock.enable = true;
+
     imports = [
+        ./modules/top-level/all-modules.nix
         ./config
 
         ./aesthetics/colors/swamp/light
@@ -67,4 +73,5 @@ in
 
     # Module stylix things
     stylix.enable = true;
+
 }
