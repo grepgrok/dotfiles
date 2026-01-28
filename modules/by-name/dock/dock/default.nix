@@ -5,7 +5,8 @@
 with lib;
 let
   cfg = config.my.dock;
-  inherit (pkgs) stdenv dockutil killall;
+  inherit (pkgs) stdenv killall;
+  inherit (pkgs.stable) dockutil;
 in
 {
   options = {

@@ -42,7 +42,11 @@
                 ./home.nix
             ];
             # https://nixos.org/manual/nixpkgs/stable/#module-system-lib-evalModules-param-specialArgs
-            extraSpecialArgs = { inherit inputs; };
+            extraSpecialArgs = {
+                inherit inputs;
+                # This isn't going to work. Need to give an... absolute path to... ~/.nix/config?
+                configBasePath = ./config;
+            };
         };
     };
 }

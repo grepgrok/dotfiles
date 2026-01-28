@@ -8,7 +8,7 @@
         ../by-name/git
         ../by-name/tex
         ../by-name/nh
-        ../by-name/dock
+        #../by-name/dock
         ../by-name/inkscape
     ];
 }

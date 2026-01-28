@@ -14,7 +14,6 @@
 let
     env = {
         defaultbrowser = "firefox"; # TODO: actually hook this up right
-        isMac = (pkgs.system == "aarch64-darwin" || pkgs.system == "x86_64-darwin");
     };
 in
 {
@@ -50,7 +49,7 @@ in
 
     # TODO: Module defaultBrowser
     home.activation = {
-        defaultBrowser = lib.mkIf env.isMac (lib.hm.dag.entryAfter ["installPackages"] ''
+        defaultBrowser = lib.mkIf pkgs.stdenv.isDarwin (lib.hm.dag.entryAfter ["installPackages"] ''
             run echo "Setting default browser to ${env.defaultbrowser}"
             # set default browser
             run ${pkgs.defaultbrowser}/bin/defaultbrowser ${env.defaultbrowser}
@@ -58,9 +57,10 @@ in
     };
 
     programs.git.enable = true;
-    programs.tex.enable = true;
     programs.nh.enable = true;
-    services.dock.enable = true;
+    programs.neovim.enable = true;
+    programs.tex.enable = true;
+    #services.dock.enable = true;
 
     imports = [
         ./modules/top-level/all-modules.nix
