@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+    lib,
+    pkgs,
+    stable,
+    ...
+}:
 let
     linterLanguages = packages: with packages; [
         c
@@ -31,6 +36,7 @@ in
     # https://github.com/LazyVim/LazyVim/discussions/1972#discussion-5826338
     programs.neovim = {
         enable = true;
+        package = stable.neovim-unwrapped;
         extraPackages = with pkgs; [
             lua-language-server
             stylua

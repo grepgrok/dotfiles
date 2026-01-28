@@ -23,6 +23,7 @@
         inherit (self) outputs;
         system = "aarch64-darwin";
         pkgs = nixpkgs.legacyPackages.${system};
+        stable = nixpkgs.legacyPackages.${system};
 
         lib = import ./lib pkgs;
     in
@@ -43,7 +44,7 @@
             ];
             # https://nixos.org/manual/nixpkgs/stable/#module-system-lib-evalModules-param-specialArgs
             extraSpecialArgs = {
-                inherit inputs;
+                inherit inputs stable;
                 # This isn't going to work. Need to give an... absolute path to... ~/.nix/config?
                 configBasePath = ./config;
             };
