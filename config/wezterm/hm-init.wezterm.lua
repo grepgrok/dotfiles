@@ -43,6 +43,7 @@ config.default_cursor_style = "SteadyUnderline"
 config.enable_scroll_bar = false
 
 -- Tab Bar
+-- TODO: true?
 config.use_fancy_tab_bar = false
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
