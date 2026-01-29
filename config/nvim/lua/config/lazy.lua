@@ -1,18 +1,21 @@
------ LazyVim Setup -----
 -- TODO: do... something for making sure lazy.nvim exists when not using nix
 
+----- lazy.nvim  Setup -----
+---NOTE: dependencies: github.com:folke/lazy.nvim.git
+-- TODO: consider just switching away from LazyVim to custom (with nix?)
+-- One of the nice things about having NeoVim stuff seperate is that I can
+-- (should be able to) still use the same config even if I can't use Nix
 require("lazy").setup({
     spec = {
-        -- add LazyVim and import its plugins
+        -- lazy.nvim requires the order: lazyvim.plugins, lazyvim.plugins.extras, (other) plugins
         { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-
-        -- import/override with ../plugins
+        -- { "LazyVim/LazyVim", import = "lazyvim.plugins.extras"}
         { import = "plugins" },
     },
 
     defaults = {
-        -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
-        -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
+        -- Lazy load plugins; only if you know what you're doing
+        -- TODO: find out, do this
         lazy = false,
         -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
         -- have outdated releases, which may break your Neovim install.
@@ -22,9 +25,18 @@ require("lazy").setup({
 
     -- automatically check for plugin updates --
     checker = {
+        -- TODO: sort out the actual update flow with nix...
         enabled = true, -- check for plugin updates periodically
         notify = false, -- notify on update
     },
+
+    -- LazyVim expects to be able to mutate lazyvim.json ater you read the NEWS.md
+    -- but nix fucks that up
+    -- TODO: get it to identify a different location for the news/lazyvim.json. Namely, here in .nix
+    -- or... that might be a terrible idea to permit programs to mutate nix config
+    --news = {
+    --  lazyvim = false,
+    --},
 
     performance = {
         rtp = {
