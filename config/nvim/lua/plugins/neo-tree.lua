@@ -1,5 +1,6 @@
 return {
     "nvim-neo-tree/neo-tree.nvim",
+    -- TODO: neo-tree can actually do some cool stuff. check it out
     opts = {
         filesystem = {
             filtered_items = {
