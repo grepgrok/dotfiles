@@ -1,2 +1,3 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
+-- hm-init.init.lua
+-- bootsrap lazy.nvim
 require("config.lazy")
