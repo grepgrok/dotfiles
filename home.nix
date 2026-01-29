@@ -25,6 +25,8 @@ in
         # map `./modules/config` dir to `~/.config` dir
         file.".config" = { source = ./config; recursive = true; };
     };
+    # TODO:
+    # environment.variables.EDITOR = "nvim";
 
     nixpkgs.config.allowUnfree = true;
     nixpkgs.config.allowUnfreePredicate = _pkg: true;
