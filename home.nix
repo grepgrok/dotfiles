@@ -52,7 +52,7 @@ in
 
   # TODO: Module defaultBrowser
   home.activation = {
-    defaultBrowser = lib.mkIf stdenv.isDarwin (
+    defaultBrowser = lib.mkIf stdenv.hostPlatform.isDarwin (
       lib.hm.dag.entryAfter [ "installPackages" ] ''
         run echo "Setting default browser to ${env.defaultbrowser}"
         # set default browser
